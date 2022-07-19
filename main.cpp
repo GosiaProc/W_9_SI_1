@@ -45,6 +45,7 @@ int fibonacciRecursiveWithMmorization(int n) {
         numOfAddition++;
         return memoryArr[n - 1] = fibonacciRecursiveWithMmorization(n - 1) + fibonacciRecursiveWithMmorization(n - 2);
     }
+   
 
 }
 
@@ -55,7 +56,7 @@ int fibonacciTailRecursive(int n, int a = 0, int b = 1)
     else if (n == 1)
         return b;
     numOfAddition++;
-    std::cout << "n: " << n << " a: " << a << " b: " << b << std::endl;
+    //std::cout << "n: " << n << " a: " << a << " b: " << b << std::endl;
     return fibonacciTailRecursive(n - 1, b, a + b);
 }
 
@@ -85,6 +86,7 @@ int main() {
     numOfAddition = 0;
     std::cout << "fibonacciRecursiveWithMmorization(" << n << ") = " << fibonacciRecursiveWithMmorization(n) << std::endl;
     std::cout << "The number of addition operations needed for the result: " << numOfAddition << std::endl << std::endl;
+    delete[] memoryArr;
 
     numOfAddition = 0;
     std::cout << "fibonacciTailRecursive(" << n << ") = " << fibonacciTailRecursive(n) << std::endl;
